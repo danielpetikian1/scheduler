@@ -7,8 +7,6 @@ const Banner = ({ title }) => (
   <h1>{ title }</h1>
 );
 
-
-
 const meetsPat = /^ *((?:M|Tu|W|Th|F)+) +(\d\d?):(\d\d) *[ -] *(\d\d?):(\d\d) *$/;
   
   const timeParts = meets => {
@@ -21,22 +19,6 @@ const meetsPat = /^ *((?:M|Tu|W|Th|F)+) +(\d\d?):(\d\d) *[ -] *(\d\d?):(\d\d) *$
       }
     };
   };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const mapValues = (fn, obj) => (
   Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, fn(value)]))
@@ -51,8 +33,6 @@ const addScheduleTimes = schedule => ({
   title: schedule.title,
   courses: mapValues(addCourseTimes, schedule.courses)
 });
-
-
 
 const App = () => {
   const [schedule, setSchedule] = useState();
